@@ -1,6 +1,5 @@
 # ionic-todo-app
-Demo page you can find here: 
- ```https://todo-example-d255c.web.app/```
+Demo page you can find [here](https://todo-example-d255c.web.app/)
 
 ***
 
