@@ -1,0 +1,14 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Edit todo</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="ion-page">
+  <app-edit-todo
+    [todo]="todo"
+    (formSubmitted)="formSubmitted()"
+  ></app-edit-todo>
+</div>

@@ -1,0 +1,5 @@
+<ion-list>
+  <ng-container *ngFor="let todo of todos; trackBy: trackByHandler">
+    <app-todos-list-item [todo]="todo"></app-todos-list-item>
+  </ng-container>
+</ion-list>

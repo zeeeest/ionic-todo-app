@@ -1,0 +1,46 @@
+<form [formGroup]="todoForm" (ngSubmit)="submitForm()">
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-label> Create TODO </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label
+        [ngClass]="{ requiredError: formControls.title.invalid && submitted }"
+        class="input-label"
+        position="floating"
+        >Title*</ion-label
+      >
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="input-label" position="floating">Description</ion-label>
+      <ion-input type="text" formControlName="description"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="input-label" position="floating">Priority</ion-label>
+      <ion-select
+        [value]="formControls.priority.value"
+        formControlName="priority"
+      >
+        <ng-container *ngFor="let priority of priorities">
+          <ion-select-option [value]="priority">{{
+            priority
+          }}</ion-select-option>
+        </ng-container>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="input-label" position="floating">Date</ion-label>
+      <ion-datetime
+        display-format="DD/MM/YYYY HH:mm"
+        picker-format="DD/MM/YYYY HH:mm"
+        formControlName="date"
+      ></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" fill="outline" type="submit">Submit</ion-button>
+</form>

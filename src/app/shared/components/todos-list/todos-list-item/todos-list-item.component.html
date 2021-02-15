@@ -1,0 +1,38 @@
+<ion-card>
+  <ion-item>
+    <ng-container [ngSwitch]="todo.priority">
+      <ion-badge *ngSwitchCase="'Low'" color="success" slot="start"
+        >Low</ion-badge
+      >
+      <ion-badge *ngSwitchCase="'Medium'" color="warning" slot="start"
+        >Medium</ion-badge
+      >
+      <ion-badge *ngSwitchCase="'High'" color="danger" slot="start"
+        >High</ion-badge
+      >
+    </ng-container>
+
+    <ion-label>{{ todo.title }}</ion-label>
+    <div class="settings-container date-container" slot="end">
+      <ion-text slot="start">{{ todo.date | date: 'mediumDate' }}</ion-text>
+    </div>
+  </ion-item>
+
+  <ion-card-content class="content-container">
+    <div class="content-text">
+      {{ todo.description }}
+    </div>
+    <div class="settings-container" slot="end">
+      <ion-button fill="outline" slot="end" (click)="editTodo()"
+        >Edit</ion-button
+      >
+      <ion-button
+        fill="outline"
+        color="danger"
+        slot="end"
+        (click)="removeTodo()"
+        >Remove</ion-button
+      >
+    </div>
+  </ion-card-content>
+</ion-card>
